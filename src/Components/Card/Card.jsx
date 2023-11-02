@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Card = () => {
+const Card = (props) => {
+
+    const {id , image} = props.IMAGE
+
     return (
-        <div>
-            This is Card
+        <div className='text-center'>
+            <img src={image} alt="" className='lg:w-full'/>
         </div>
     );
 };
