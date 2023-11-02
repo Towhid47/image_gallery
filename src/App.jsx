@@ -1,4 +1,5 @@
 import './App.css'
+import CardsContainer from './Components/CardsContainer/CardsContainer'
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
             </div>
             <hr />
 
-            
+            <CardsContainer></CardsContainer>
       </section>
     </>
   )
