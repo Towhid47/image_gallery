@@ -21,7 +21,7 @@ const CardsContainer = () => {
                      products.map((product)=> <li className="border-2 border-gray-300 rounded-md  lg:w-full"><Card product = {product}  key={product.id}></Card></li>) 
                    }
 
-                   <li className='border-2 border-gray-400 border-dashed rounded-md flex justify-center items-center'>Add Image &nbsp; <FaImages className='text-2xl'/></li>
+                   <li className='border-2 border-gray-400 border-dashed rounded-md flex justify-center items-center flex-col-reverse'><p>Add Image</p> &nbsp; <p><FaImages className='text-2xl'/></p></li>
              </ul>
 
         </div>

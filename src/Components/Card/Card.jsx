@@ -7,9 +7,9 @@ const Card = (props) => {
     return (
         <div className='text-center relative hover:cursor-pointer'>
             
-            <div className=' w-full h-full hover:bg-black opacity-30 p-4 absolute z-10  transition hover:duration-300'>
+            <div className=' w-full h-full hover:bg-[#0000008a] p-4 absolute z-10  transition hover:duration-300'>
               <label className='absolute left-2'>
-                   <input type="checkbox" className='accent-black' />
+                   <input type="checkbox" />
               </label>
             </div>
            
