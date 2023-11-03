@@ -25,8 +25,6 @@ function App() {
      }   
   }
 
-  console.log(checkedImages);
-
 
 
    // -------------- Image Deletion handling --------------------- //
@@ -36,14 +34,12 @@ function App() {
    const handleDelete = () =>{
       
       setRemainingImages( IMGs.filter((item) => !checkedImages.includes(item.id) ) )
- 
-       console.log(remainingImages);
- 
-     
+
+      setImages([])
  
    }
-
- 
+    
+    IMGs = [...remainingImages];  
 
 
   return (
@@ -53,7 +49,7 @@ function App() {
             <div className='font-semibold text-xl mb-3 flex justify-between'>
               {/* --------------Left Side Content -------------------*/}
                  {
-                    (checkedImages.length === 0)? <h2>Gallery</h2> : <h2><FaCheck className='inline text-blue-600'></FaCheck> {checkedImages.length} Files Selected</h2>
+                    (checkedImages.length === 0)? <h2>Gallery</h2> : <h2><FaCheck className='inline text-blue-600'/> {checkedImages.length} Files Selected</h2>
                  }
 
               {/* ------------------Right Side Content---------------------- */}
