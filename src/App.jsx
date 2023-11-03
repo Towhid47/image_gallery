@@ -29,6 +29,20 @@ function App() {
 
 
 
+   // -------------- Image Deletion handling --------------------- //
+
+   const [remainingImages , setRemainingImages] = useState(IMGs);
+  
+   const handleDelete = () =>{
+      
+      setRemainingImages( IMGs.filter((item) => !checkedImages.includes(item.id) ) )
+ 
+       console.log(remainingImages);
+ 
+     
+ 
+   }
+
  
 
 
@@ -46,7 +60,7 @@ function App() {
                   <div>
                       {
                         (checkedImages.length === 0)? <> </> : 
-                        (checkedImages.length === 1 )? <p className='text-red-600 hover:cursor-pointer'  >Delete file</p> : <p className='text-red-600 hover:cursor-pointer'  >Delete files</p>
+                        (checkedImages.length === 1 )? <p className='text-red-600 hover:cursor-pointer'  onClick={handleDelete}>Delete file</p> : <p className='text-red-600 hover:cursor-pointer'  onClick={handleDelete}>Delete files</p>
                       }
                   </div>
             </div>
