@@ -12,7 +12,7 @@ const Card = (props) => {
     return (
         <div className='text-center relative hover:cursor-pointer'>
             
-            <div className=' w-full h-full hover:bg-[#0000008a] p-4 absolute z-10  transition hover:duration-700'>
+            <div className='w-full h-full hover:bg-[#0000008a] p-4 absolute z-10  transition hover:duration-700'>
               <label className='absolute left-2'>
                    <input type="checkbox" value={id} onChange={handleChange}/>
               </label>

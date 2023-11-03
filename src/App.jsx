@@ -56,7 +56,7 @@ function App() {
                   <div>
                       {
                         (checkedImages.length === 0)? <> </> : 
-                        (checkedImages.length === 1 )? <p className='text-red-600 hover:cursor-pointer'  onClick={handleDelete}>Delete file</p> : <p className='text-red-600 hover:cursor-pointer'  onClick={handleDelete}>Delete files</p>
+                        (checkedImages.length === 1 )? <p className='text-red-600 hover:cursor-pointer hover:underline '  onClick={handleDelete}>Delete file</p> : <p className='text-red-600 hover:cursor-pointer hover:underline'  onClick={handleDelete}>Delete files</p>
                       }
                   </div>
             </div>
