@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import './App.css'
 import Swal from 'sweetalert2';
@@ -53,6 +53,35 @@ function App() {
     
     IMGs = [...remainingImages];
 
+
+      //---------------- Drag n Drop & Sort image list ---------------- //
+
+      const handleDragStart = (e, index) => {
+        e.dataTransfer.setData("index", index);
+      };
+    
+      const handleDragOver = (e) => {
+        e.preventDefault();
+      };
+    
+      const handleDrop = (e, index) => {
+        e.preventDefault();
+        const sourceIndex = e.dataTransfer.getData("index");
+        const newList = [...remainingImages];
+        const [removed] = newList.splice(sourceIndex, 1);
+        newList.splice(index, 0, removed);
+        setRemainingImages(newList);
+      };
+
+
+    
+  
+      
+    
+
+
+
+
   return (
     <>
       <section className='w-full lg:w-11/12 lg:mx-auto'>
@@ -73,7 +102,7 @@ function App() {
             </div>
             <hr />
 
-            <CardsContainer IMGs={IMGs}  handleChange={handleChange}></CardsContainer>
+            <CardsContainer IMGs={IMGs}  handleChange={handleChange} handleDragStart={handleDragStart} handleDragOver={handleDragOver} handleDrop={handleDrop}></CardsContainer>
       </section>
     </>
   )

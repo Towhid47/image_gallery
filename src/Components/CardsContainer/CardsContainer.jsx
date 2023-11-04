@@ -1,11 +1,15 @@
 import Card from '../Card/Card';
 
 import { FaImages } from 'react-icons/fa';
-import { useRef, useState } from 'react';
 
   const CardsContainer = (props) =>{
 
-    let { IMGs , handleChange} = props ;
+    let { IMGs , handleChange ,handleDragStart , handleDragOver ,handleDrop} = props ;
+
+
+  
+
+    
 
 
     return (
@@ -15,7 +19,10 @@ import { useRef, useState } from 'react';
 
                    {
                      IMGs.map((IMG , index)=> <li draggable
-                                          key={index} className="transition duration-500 border-2 border-gray-300 rounded-md  lg:w-full"><Card IMG = {IMG} handleChange={handleChange}></Card></li>) 
+                                                  onDragStart={(e) => handleDragStart(e, index)}
+                                                  onDragOver={handleDragOver}
+                                                  onDrop={(e) => handleDrop(e, index)}
+                                          key={index} className="transition duration-700 border-2 border-gray-300 rounded-md  lg:w-full"><Card IMG = {IMG} handleChange={handleChange}></Card></li>) 
                    }
 
                    <li className='border-2 border-gray-400 border-dashed rounded-md flex justify-center items-center flex-col-reverse'><p>Add Image</p> &nbsp; <p><FaImages className='text-2xl'/></p></li>
