@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
 import './App.css'
+import Swal from 'sweetalert2';
+
 import CardsContainer from './Components/CardsContainer/CardsContainer'
 import IMAGES from './images.json'
 
@@ -33,14 +35,23 @@ function App() {
   
    const handleDelete = () =>{
       
-      setRemainingImages( IMGs.filter((item) => !checkedImages.includes(item.id) ) )
+      setRemainingImages( IMGs.filter((item) => !checkedImages.includes(item.id) ) );
 
-      setImages([])
+      //----- Showing Animation after Delete -------- //
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Delete Success',
+        showConfirmButton: false,
+        timer: 1700
+      })
+      // --------------------------------------------//
+
+      setImages([]);
  
    }
     
-    IMGs = [...remainingImages];  
-
+    IMGs = [...remainingImages];
 
   return (
     <>
