@@ -1,8 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Image Gallery
+The purpose of this project is to show the images in an organized way. The user can see images and can organize according to his/her choice. 
+## Features
 
-Currently, two official plugins are available:
+- Fully responsive web application.
+- User can select single or multiple images and delete them.
+- User can drag or drop images to organize the image gallery. 
+- Images can be sorted according to users choice.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Tools & Technologies
+
+React JS , TailwindCSS 
+
+
+## Live Website Link
+https://image-gallery-47.netlify.app/
+
