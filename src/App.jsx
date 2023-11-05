@@ -54,25 +54,27 @@ function App() {
     IMGs = [...remainingImages];
 
 
-      //---------------- Drag n Drop & Sort image list ---------------- //
+     //---------------- Drag n Drop & Sort image list ---------------- //
 
-      const handleDragStart = (e, index) => {
-        e.dataTransfer.setData("index", index);
-      };
-    
-      const handleDragOver = (e) => {
-        e.preventDefault();
-      };
-    
-      const handleDrop = (e, index) => {
-        e.preventDefault();
-        const sourceIndex = e.dataTransfer.getData("index");
-        const newList = [...remainingImages];
-        const [removed] = newList.splice(sourceIndex, 1);
-        newList.splice(index, 0, removed);
-        setRemainingImages(newList);
-      };
+  const [draggedItem, setDraggedItem] = useState(null);
 
+  const handleDragStart = (e, index) => {
+    e.dataTransfer.setData("text/plain", index);
+    setDraggedItem(index);
+  };
+
+  const handleDragOver = (index) => {
+    if (draggedItem === null || index === draggedItem) return;
+    const newItems = [...remainingImages];
+    const [dragged] = newItems.splice(draggedItem, 1);
+    newItems.splice(index, 0, dragged);
+    setRemainingImages(newItems);
+    setDraggedItem(index);
+  };
+
+  const handleDragEnd = () => {
+    setDraggedItem(null);
+  };
 
     
   
@@ -102,7 +104,7 @@ function App() {
             </div>
             <hr />
 
-            <CardsContainer IMGs={IMGs}  handleChange={handleChange} handleDragStart={handleDragStart} handleDragOver={handleDragOver} handleDrop={handleDrop}></CardsContainer>
+            <CardsContainer IMGs={IMGs}  handleChange={handleChange} handleDragStart={handleDragStart} handleDragOver={handleDragOver} handleDragEnd={handleDragEnd}></CardsContainer>
       </section>
     </>
   )
